@@ -10,6 +10,8 @@
 
 -export([ compile/1
         , compile/2
+        , run/2
+        , run/3
         , match/2
         , match/3
         , replace/3
@@ -82,6 +84,14 @@ compile(_) ->
 
 -spec compile(uncompiled_regex(), [compile_option()]) -> compile_result().
 compile(_,_) ->
+    ?nif_stub.
+
+-spec run(subject(), regex()) -> match_result().
+run(_,_) ->
+    ?nif_stub.
+
+-spec run(subject(), regex(), [match_option()]) -> match_result().
+run(_,_,_) ->
     ?nif_stub.
 
 -spec match(subject(), regex()) -> match_result().
